@@ -9,6 +9,9 @@ from qt_ui.settings import get_settings_instance
 defaults = {
     AxisEnum.POSITION_ALPHA: ('alpha', 'L0', -1, 1, True, True),
     AxisEnum.POSITION_BETA: ('beta', 'L1', -1, 1, True, True),
+    AxisEnum.POSITION_ALPHA2: ('alpha2', 'L2', -1, 1, True, True),
+    AxisEnum.POSITION_BETA2: ('beta2', 'L3', -1, 1, True, True),
+
     AxisEnum.VOLUME_API: ('volume', '', 0, 1, True, True),
     AxisEnum.VOLUME_EXTERNAL: ('', '', 0, 1, False, False),
     AxisEnum.CARRIER_FREQUENCY: ('frequency', '', 500, 1000, True, True),

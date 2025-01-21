@@ -64,6 +64,7 @@ class ThreephaseContinuousAlgorithmParams:
 @dataclass
 class ThreephasePulsebasedAlgorithmParams:
     position: ThreephasePositionParams
+    position2: ThreephasePositionParams
     transform: ThreephasePositionTransformParams
     calibrate: ThreephaseCalibrationParams
     vibration_1: VibrationParams

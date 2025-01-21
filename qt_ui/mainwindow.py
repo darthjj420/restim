@@ -84,6 +84,9 @@ class Window(QMainWindow, Ui_MainWindow):
         self.alpha = create_temporal_axis(0.0)
         self.beta = create_temporal_axis(0.0)
 
+        self.alpha2 = create_temporal_axis(0.0)
+        self.beta2 = create_temporal_axis(0.0)
+
         self.tcode_command_router = TCodeCommandRouter(
             self.alpha,
             self.beta,
@@ -115,6 +118,11 @@ class Window(QMainWindow, Ui_MainWindow):
 
         self.graphicsView.mousePositionChanged.connect(self.motion_generator.updateMousePosition)
 
+        self.graphicsView2.set_axis(self.alpha2, self.beta2, self.tab_threephase.transform_params)
+        self.motion_generator2 = qt_ui.motion_generation.MotionGenerator(self, self.alpha2, self.beta2)
+
+        self.graphicsView2.mousePositionChanged.connect(self.motion_generator2.updateMousePosition)
+
         self.tab_details.set_axis(
             self.alpha,
             self.beta,
@@ -128,6 +136,11 @@ class Window(QMainWindow, Ui_MainWindow):
         self.motion_generator.patternChanged(self.comboBox_patternSelect.currentText())
         self.doubleSpinBox.valueChanged.connect(self.motion_generator.velocityChanged)
         self.motion_generator.velocityChanged(self.doubleSpinBox.value())
+
+        self.comboBox_patternSelect2.currentTextChanged.connect(self.motion_generator2.patternChanged)
+        self.motion_generator2.patternChanged(self.comboBox_patternSelect2.currentText())
+        self.doubleSpinBox2.valueChanged.connect(self.motion_generator2.velocityChanged)
+        self.motion_generator2.velocityChanged(self.doubleSpinBox2.value())
 
         self.output_device = None
 

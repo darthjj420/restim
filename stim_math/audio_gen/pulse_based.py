@@ -103,6 +103,7 @@ class DefaultThreePhasePulseBasedAlgorithm(ThreePhasePulseBasedAlgorithmBase):
         super().__init__(media, params.calibrate)
         self.params = params
         self.position_params = ThreePhasePosition(params.position, params.transform)
+        self.position2_params = ThreePhasePosition(params.position2, params.transform)
         self.vibration = VibrationAlgorithm(params.vibration_1, params.vibration_2)
         self.seq = 0
         self.safety_limits = safety_limits
@@ -134,7 +135,11 @@ class DefaultThreePhasePulseBasedAlgorithm(ThreePhasePulseBasedAlgorithmBase):
         random = self.params.pulse_interval_random.interpolate(system_time_estimate)
         pause_duration = pause_duration * np.random.uniform(1 - random, 1 + random)
 
-        alpha, beta = self.position_params.get_position(system_time_estimate)
+        if self.seq % 2 == 0:
+            alpha, beta = self.position_params.get_position(system_time_estimate)
+        else:
+            alpha, beta = self.position2_params.get_position(system_time_estimate)
+            # volume = 0
 
         # exponent transform. TODO: decide whether to keep
         # transform = ThreePhaseExponentAdjustment(self.params.threephase_exponent.last_value())

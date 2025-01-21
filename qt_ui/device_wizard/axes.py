@@ -5,6 +5,8 @@ class AxisEnum(Enum):
     NONE = 0
     POSITION_ALPHA = 1
     POSITION_BETA = 2
+    POSITION_ALPHA2 = 3
+    POSITION_BETA2 = 4
 
     VOLUME_API = 10
     VOLUME_MASTER = 11
@@ -36,6 +38,8 @@ class AxisEnum(Enum):
                 AxisEnum.NONE: '(none)',
                 AxisEnum.POSITION_ALPHA: 'alpha',
                 AxisEnum.POSITION_BETA: 'beta',
+                AxisEnum.POSITION_ALPHA2: 'alpha2',
+                AxisEnum.POSITION_BETA2: 'beta2',
                 AxisEnum.CARRIER_FREQUENCY: 'carrier frequency',
                 AxisEnum.VOLUME_API: 'volume',
                 AxisEnum.VOLUME_EXTERNAL: 'volume (external)',
@@ -64,6 +68,9 @@ class AxisEnum(Enum):
         return {
             AxisEnum.POSITION_ALPHA: 'POSITION_ALPHA',
             AxisEnum.POSITION_BETA: 'POSITION_BETA',
+            AxisEnum.POSITION_ALPHA2: 'POSITION_ALPHA2',
+            AxisEnum.POSITION_BETA2: 'POSITION_BETA2',
+
             AxisEnum.CARRIER_FREQUENCY: 'CARRIER_FREQUENCY',
             AxisEnum.VOLUME_API: 'VOLUME_API',
             AxisEnum.VOLUME_EXTERNAL: 'VOLUME_EXTERNAL',
@@ -90,6 +97,8 @@ class AxisEnum(Enum):
 all_axis = [
     AxisEnum.POSITION_ALPHA,
     AxisEnum.POSITION_BETA,
+    AxisEnum.POSITION_ALPHA2,
+    AxisEnum.POSITION_BETA2,
 
     AxisEnum.VOLUME_API,
     AxisEnum.VOLUME_EXTERNAL,

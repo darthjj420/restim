@@ -76,6 +76,28 @@
             </widget>
            </item>
            <item>
+            <widget class="PhaseWidgetAlphaBeta" name="graphicsView2">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>200</width>
+               <height>200</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>200</width>
+               <height>200</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
             <widget class="QGroupBox" name="groupBox_3">
              <property name="title">
               <string>volume</string>
@@ -128,6 +150,45 @@
               </item>
               <item>
                <widget class="QDoubleSpinBox" name="doubleSpinBox">
+                <property name="singleStep">
+                 <double>0.100000000000000</double>
+                </property>
+                <property name="value">
+                 <double>1.000000000000000</double>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="comboBox_patternSelect2">
+                <item>
+                 <property name="text">
+                  <string>Mouse</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Circle</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>A</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>B</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>C</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="doubleSpinBox2">
                 <property name="singleStep">
                  <double>0.100000000000000</double>
                 </property>

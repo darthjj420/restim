@@ -87,6 +87,10 @@ class AlgorithmFactory:
                     self.get_axis_alpha(),
                     self.get_axis_beta(),
                 ),
+                position2=ThreephasePositionParams(
+                    self.get_axis_alpha2(),
+                    self.get_axis_beta2(),
+                ),
                 transform=self.mainwindow.tab_threephase.transform_params,
                 calibrate=self.mainwindow.tab_threephase.calibrate_params,
                 vibration_1=self.get_axis_vib1_all(),
@@ -186,6 +190,12 @@ class AlgorithmFactory:
 
     def get_axis_beta(self):
         return self.get_axis_from_script_mapping(AxisEnum.POSITION_BETA) or self.mainwindow.beta
+
+    def get_axis_alpha2(self):
+        return self.get_axis_from_script_mapping(AxisEnum.POSITION_ALPHA2) or self.mainwindow.alpha2
+
+    def get_axis_beta2(self):
+        return self.get_axis_from_script_mapping(AxisEnum.POSITION_BETA2) or self.mainwindow.beta2
 
     def get_axis_volume_api(self):
         return self.get_axis_from_script_mapping(AxisEnum.VOLUME_API) or self.mainwindow.tab_volume.volume.api
